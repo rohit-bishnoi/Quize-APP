@@ -1,0 +1,10 @@
+
+<div class="row" >
+    <div class="col-md-6 overflow-y-auto" *ngIf="_userQuestionData?.dqObj">
+        <div class="col-md-12" ><p  class="text-break"><b>Drection for Questions:</b> {{_userQuestionData.dqObj!.directionDesc}}</p></div>
+       </div>
+    <div [ngClass]="_userQuestionData.dqObj! ? 'col-md-6' : 'col-md-12'">
+        <app-general-quest-template></app-general-quest-template>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+.take-quiz-page{
+    padding: 1% 0;
+}
+.quest-numbers-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+
+}
+.quiz-btn-nav-group{
+    display: flex;
+    padding: 0.5em 0;
+    flex-direction: row-reverse;
+    column-gap: 0.5em;
+}
+.selected-qsn-btn{
+    border:2px solid black;
+  }

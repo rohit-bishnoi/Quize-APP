@@ -1,0 +1,67 @@
+
+<!-- <button mat-raised-button >Review Quiz</button> -->
+<!-- <app-quiz-review></app-quiz-review> -->
+<div class="card">
+<div class="card-title"><h4>Result:</h4></div>
+<div class="card-body">
+    <div class="score-details">
+        <p><b>Total Questions:</b>{{quizResult.totalQuestions}}</p>
+        <p><b>Attempted Questions:</b> {{quizResult.attemptedQsns}}</p>
+        <p><b>Refrain Questions:</b> {{quizResult.totalRefrain}}</p>
+        <p><b>Correct Ans:</b> {{quizResult.totalCorrectAns}}</p>
+        <p><b>Wrong Ans:</b> {{quizResult.totalWrongAns}}</p>
+    </div>
+</div>
+
+</div>   
+<div ngbAccordion [closeOthers]="true">
+	
+    <div ngbAccordionItem >
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>Review Quiz</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+                    dsfsd
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>
+<button type="button" routerLink="/secure/quiz" class="btn btn-outline-primary">Exit <i class="bi bi-box-arrow-right"></i></button>
+<!--
+<mat-accordion>
+    <mat-expansion-panel hideToggle [expanded]="panelOpenState" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Result:
+        </mat-panel-title>
+        <mat-panel-description>
+        
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="row">
+        
+        <div class="col-md-6"><b>Total Questions:</b></div>
+        <div class="col-md-6" ><p class="float-start">{{quizResult?.totalQuestions}}</p></div>
+        <div class="col-md-6"><b>Attempted Questions:</b></div>
+        <div class="col-md-6" ><p class="float-start">{{quizResult?.attemptedQsns}}</p></div>
+        <div class="col-md-6"><b>Refrain Questions:</b></div>
+        <div class="col-md-6" ><p class="float-start">{{quizResult?.totalRefrain}}</p></div>
+        <div class="col-md-6"><b>Correct Ans:</b></div>
+        <div class="col-md-6" ><p class="float-start">{{quizResult?.totalCorrectAns}}</p></div>
+        <div class="col-md-6"><b>Wrong Ans:</b></div>
+        <div class="col-md-6" ><p class="float-start">{{quizResult?.totalWrongAns}}</p></div>
+
+    </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="!panelOpenState" (closed)="panelOpenState = true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            Review Quiz
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-quiz-review></app-quiz-review>
+    </mat-expansion-panel>
+  </mat-accordion>-->

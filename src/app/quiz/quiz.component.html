@@ -1,0 +1,25 @@
+<div class="container">
+  <header>
+    <h2>Quiz</h2>
+    <button type="button" routerLink="/secure/dashboard" class="btn btn-outline-primary btn-sm">Back</button>
+    
+  </header>
+  <hr>
+      <main>
+    <div class="row"> 
+        <ng-container *ngFor="let quiz of quizList">
+       
+        <div class="col-md-3 mb-3">
+            <div class="card">
+                <h5 class="card-header">{{quiz.label}}</h5>
+                <div class="card-body">
+                  <h5 class="card-title"><i class="bi bi-clock-fill"></i>{{quiz.time}}</h5>
+                  <p class="card-text">{{quiz.description}}</p>
+                  <a href="#" routerLink="/secure/quiz/takeQuiz/{{quiz.id}}" class="btn btn-outline-primary btn-sm">Start</a>
+                </div>
+              </div>
+        </div>
+    </ng-container>
+    </div>
+  </main>
+</div>

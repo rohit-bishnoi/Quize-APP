@@ -1,0 +1,58 @@
+<div class="take-quiz-page">
+<div class="container">
+    <div class="row " *ngIf="!isFinished">
+    <div class="col-9 pe-4">
+        <div class="row mb-3">
+            <div class="card">
+                Category
+            </div>   
+        </div>
+        <div class="row">
+                <div class="card" style="height: 500px; overflow: hidden; overflow-y: scroll;">
+                    <div class="card-body">
+                        <app-direct-quest-template></app-direct-quest-template>
+                    </div> 
+                </div>   
+        </div>
+            <div  class="quiz-btn-nav-group">
+                <button type="button" class="btn btn-outline-primary" (click)="finishQuiz()" >Finish</button>
+                <button type="button" class="btn btn-outline-primary" (click)="nextQuestion()"  [disabled]="!nextBtn">Next</button>
+                <button type="button" class="btn btn-outline-primary" (click)="prevQuestion()"   [disabled]="!prevBtn">Prev</button>
+                <button type="button" class="btn btn-outline-primary" (click)="clearAns()"   >Clear</button>
+            </div>
+        
+    </div>
+    <div class="col-3">
+        <div class="row mb-3">
+            <div class="card">
+              <p> <i class="bi bi-clock-history"></i> Time: <b>{{presentTime}}</b> </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-title">Questions:</div>
+                <div class="quest-numbers-group">
+                    <ng-container *ngIf="takeQuizObj.userGqMap">
+ 
+                    <div  *ngFor="let q of userQuizList$ | async | keyvalue ;let i = index">
+            
+                    <button type="button"  (click)="selectedQuestion(q.key)"  
+                    [ngClass]="[setNumberBtnStatus(q.value),pIndex == q.key? 'selected-qsn-btn':'',q.value.attempted ? 'btn btn-info':'btn btn-light' ]">
+                        {{q.key+1}}
+                      </button>
+                    </div>
+       
+            </ng-container>
+            </div>
+                    <button class="btn btn-light" >Next Section</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="isFinished">
+    <div class="card">
+      <app-quiz-score></app-quiz-score> 
+    </div>
+</div>
+</div>
+</div>
